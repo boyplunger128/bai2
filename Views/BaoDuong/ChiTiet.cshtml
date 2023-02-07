@@ -1,0 +1,26 @@
+
+<form method="post">
+
+    Ngày nhận xe: <input type="date" name ="NgayNhanXe" value="@ViewBag.Model2.NGAYNGIONHAN.ToString("yyyy-MM-dd")" />
+    Ngày trả xe: <input type="date" name="NgayTraXe" value="@ViewBag.Model2.NGAYGIOTRA.ToString("yyyy-MM-dd")"/><br/>
+    Thành tiền: <input type="number" name="ThanhTien" value="@ViewBag.ThanhTien"/>
+
+    <table border="1">
+        <tr>
+            <th>Tên công việc</th>
+            <th>Đơn giá</th>
+            <th>Chức năng</th>
+        </tr>
+        @foreach (var item in @ViewBag.Model1)
+        {
+            <tr>
+                <td>@item.TenCV</td>
+                <td>@item.DonGia</td>
+                <td>
+                    <a href="Xoa?MaCV=@item.MaCV&&MaBD=@ViewBag.Model2.MABD">Xóa</a>
+                </td>
+            </tr>
+        }
+    </table>
+
+</form>

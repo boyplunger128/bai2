@@ -1,0 +1,9 @@
+@model de1.Models.BaoDuong
+
+<form action="/BaoDuong/TinhTrangCapNhat?MaBD=@Model.MABD" method="post">
+    Ngày giờ nhận xe <input type="date" name="NgayGioNhan" value="@Model.NGAYNGIONHAN.ToString("yyyy-MM-dd")"/> <br/>
+    Ngày giờ trả xe <input type="date" name="NgayGioTra" value="@Model.NGAYGIOTRA.ToString("yyyy-MM-dd")"/><br/>
+    Số km: <input type="number" name="SoKM" value="@Model.SOKM"/><br/>
+    Nội dung: <input type="text" name="NoiDung" value="@Model.NOIDUNG"/><br/>
+    <input type="submit" name="submit" value="Cập nhật"/>
+</form>
